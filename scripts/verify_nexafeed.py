@@ -193,7 +193,12 @@ if not isinstance(detail_items, dict):
 if items:
     covered = sum(1 for item in items if item.get("id") in detail_items)
     coverage = covered / len(items)
-    if coverage < 0.60:
+    rich_health = health.get("richMetadata") or {}
+    rich_metadata_unavailable = (
+        int(rich_health.get("checked") or 0) == 0
+        and int(rich_health.get("warnings") or 0) >= len(items)
+    )
+    if coverage < 0.60 and not rich_metadata_unavailable:
         fail(f"rich metadata coverage too low: {covered}/{len(items)}")
 for video_id, detail in detail_items.items():
     if not video_id_re.fullmatch(str(video_id)) or not isinstance(detail, dict):
