@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T09:40:57Z",
+  "updatedAt": "2026-10-12T09:46:39Z",
   "items": [
     {
       "id": "4fLVq6HJsKc",
@@ -20968,6 +20968,15 @@
       "runAt": "2026-10-12T09:40:57Z",
       "new": 77,
       "long": 77,
+      "shorts": 0,
+      "channelsChecked": 17,
+      "warnings": 1,
+      "secondaryQuery": "Gaming und Soulslike"
+    },
+    {
+      "runAt": "2026-10-12T09:46:39Z",
+      "new": 0,
+      "long": 0,
       "shorts": 0,
       "channelsChecked": 17,
       "warnings": 1,
