@@ -1,25 +1,31 @@
 {
   "siteName": "YourTube",
-  "tagline": "Watch only those valuable for you",
-  "siteUrl": "https://developerjillur.github.io/nexafeed/",
-  "repositoryUrl": "https://github.com/developerjillur/nexafeed",
-  "timezone": "Asia/Dhaka",
+  "tagline": "KI, lokale KI, Kunst und Soulslike entdecken",
+  "siteUrl": "https://gpunktw.github.io/nexafeed/",
+  "repositoryUrl": "https://github.com/gpunktw/nexafeed",
+  "timezone": "Europe/Vienna",
   "keywords": [
-    "AI automation",
-    "AI agents",
-    "generative AI tools",
-    "no-code automation",
-    "AI software development"
+    "neue KI Modelle deutsch",
+    "new AI model release",
+    "lokale KI deutsch",
+    "local AI Qwen Ollama llama.cpp",
+    "local LLM hardware GPU benchmark",
+    "Kunst Malerei Tutorial deutsch",
+    "painting art tutorial",
+    "neue Soulslike Spiele deutsch",
+    "new Soulslike games"
   ],
   "topics": [
-    "Artificial Intelligence",
-    "Automation",
-    "Software Development"
+    "KI und neue KI-Modelle",
+    "Lokale KI",
+    "Kunst und Malerei",
+    "Gaming und Soulslike"
   ],
   "categories": [
-    "AI coding tools",
-    "agency automation",
-    "digital marketing automation"
+    "AI models and research",
+    "Qwen Ollama llama.cpp and hardware",
+    "painting and visual art",
+    "Soulslike and new games"
   ],
   "primaryLongPerChannel": 5,
   "primaryShortsPerChannel": 5,
