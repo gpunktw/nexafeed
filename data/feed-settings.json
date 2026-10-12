@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T09:46:39Z",
+  "updatedAt": "2026-10-12T09:51:40Z",
   "channels": [
     {
       "name": "Two Minute Papers",
@@ -157,8 +157,8 @@
     },
     {
       "name": "PC Games",
-      "handle": "@PCGames",
-      "url": "https://www.youtube.com/@PCGames",
+      "handle": "@PCGamesDE",
+      "url": "https://www.youtube.com/@PCGamesDE",
       "monitorLong": true,
       "monitorShorts": false,
       "priority": 2,

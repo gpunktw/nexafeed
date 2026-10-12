@@ -1,7 +1,31 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T09:46:39Z",
+  "updatedAt": "2026-10-12T09:51:40Z",
   "items": [
+    {
+      "id": "Z8Io_BX0_84",
+      "type": "long",
+      "source": "primary",
+      "channel": "PC Games",
+      "publishedAt": "2026-10-11T08:00:33Z",
+      "firstSeenAt": "2026-10-12T09:51:40Z"
+    },
+    {
+      "id": "FVu2gUNNIhw",
+      "type": "long",
+      "source": "primary",
+      "channel": "PC Games",
+      "publishedAt": "2026-10-09T11:00:39Z",
+      "firstSeenAt": "2026-10-12T09:51:40Z"
+    },
+    {
+      "id": "yXjuzU8xEeY",
+      "type": "long",
+      "source": "primary",
+      "channel": "PC Games",
+      "publishedAt": "2026-10-08T11:00:12Z",
+      "firstSeenAt": "2026-10-12T09:51:40Z"
+    },
     {
       "id": "4fLVq6HJsKc",
       "type": "long",
@@ -20980,6 +21004,15 @@
       "shorts": 0,
       "channelsChecked": 17,
       "warnings": 1,
+      "secondaryQuery": "Gaming und Soulslike"
+    },
+    {
+      "runAt": "2026-10-12T09:51:40Z",
+      "new": 3,
+      "long": 3,
+      "shorts": 0,
+      "channelsChecked": 18,
+      "warnings": 0,
       "secondaryQuery": "Gaming und Soulslike"
     }
   ]
