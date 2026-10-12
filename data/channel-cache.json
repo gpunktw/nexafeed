@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-24T04:53:30Z",
+  "updatedAt": "2026-10-12T09:40:57Z",
   "channels": {
     "@vaibhavsisinty": {
       "channelId": "UClXAalunTPaX1YV185DWUeg",
@@ -232,6 +232,125 @@
       "handle": "@sid.curious",
       "resolvedAt": "2026-07-27T06:01:51Z",
       "lastCheckedAt": "2026-08-24T04:53:30Z"
+    },
+    "@twominutepapers": {
+      "channelId": "UCbfYPyITQ-7l4upoX8nvctg",
+      "channelName": "Two Minute Papers",
+      "handle": "@TwoMinutePapers",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@jeffgeerling": {
+      "channelId": "UCR-DXc1voovS8nhAvccRZhg",
+      "channelName": "Jeff Geerling",
+      "handle": "@JeffGeerling",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@networkchuck": {
+      "channelId": "UC9x0AN7BWHpCDHSm9NiJFJQ",
+      "channelName": "NetworkChuck",
+      "handle": "@NetworkChuck",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@matthew_berman": {
+      "channelId": "UCawZsQWqfGSbCI5yjkdVkTA",
+      "channelName": "Matthew Berman",
+      "handle": "@matthew_berman",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@wesroth": {
+      "channelId": "UCqcbQf6yw5KzRoDDcZ_wBSw",
+      "channelName": "Wes Roth",
+      "handle": "@WesRoth",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@aiexplained-official": {
+      "channelId": "UCNJ1Ymd5yFuUPtn21xtRbbw",
+      "channelName": "AI Explained",
+      "handle": "@aiexplained-official",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@level1techs": {
+      "channelId": "UC4w1YQAJMWOz4qtxinq55LQ",
+      "channelName": "Level1Techs",
+      "handle": "@Level1Techs",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@techtechpotato": {
+      "channelId": "UC1r0DG-KEPyqOeW6o79PByw",
+      "channelName": "TechTechPotato",
+      "handle": "@TechTechPotato",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@drawmixpaint": {
+      "channelId": "UCXgSi1Kwt7K2RUOapq2KHuQ",
+      "channelName": "Draw Mix Paint",
+      "handle": "@DrawMixPaint",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@jamesgurney": {
+      "channelId": "UCTIoOLzT1jbxAcPW99xn0zQ",
+      "channelName": "James Gurney",
+      "handle": "@JamesGurney",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@prokotv": {
+      "channelId": "UClM2LuQ1q5WEc23462tQzBg",
+      "channelName": "Proko",
+      "handle": "@ProkoTV",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@lachri": {
+      "channelId": "UCgoZdnwxQzre7zjApoBl7og",
+      "channelName": "Lachri Fine Art",
+      "handle": "@Lachri",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@ironpineapple": {
+      "channelId": "UC477Kvszl9JivqOxN1dFgPQ",
+      "channelName": "Iron Pineapple",
+      "handle": "@IronPineapple",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@vaatividya": {
+      "channelId": "UCe0DNp0mKMqrYVaTundyr9w",
+      "channelName": "VaatiVidya",
+      "handle": "@VaatiVidya",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@skillup": {
+      "channelId": "UCZ7AeeVbyslLM_8-nVy2B8Q",
+      "channelName": "Skill Up",
+      "handle": "@SkillUp",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@fextralife": {
+      "channelId": "UClkUHCETNUph8vM-4gQpwUA",
+      "channelName": "Fextralife",
+      "handle": "@Fextralife",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
+    },
+    "@gamestar": {
+      "channelId": "UC6C1dyHHOMVIBAze8dWfqCw",
+      "channelName": "GameStar",
+      "handle": "@GameStar",
+      "resolvedAt": "2026-10-12T09:40:57Z",
+      "lastCheckedAt": "2026-10-12T09:40:57Z"
     }
   }
 }

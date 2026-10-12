@@ -1,320 +1,191 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-24T04:53:30Z",
+  "updatedAt": "2026-10-12T09:40:57Z",
   "channels": [
     {
-      "name": "Vaibhav Sisinty",
-      "handle": "@vaibhavsisinty",
-      "url": "https://www.youtube.com/@vaibhavsisinty",
+      "name": "Two Minute Papers",
+      "handle": "@TwoMinutePapers",
+      "url": "https://www.youtube.com/@TwoMinutePapers",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "KI und Forschung"
     },
     {
-      "name": "Varun Mayya",
-      "handle": "@VarunMayya",
-      "url": "https://www.youtube.com/@VarunMayya",
+      "name": "AI Explained",
+      "handle": "@aiexplained-official",
+      "url": "https://www.youtube.com/@aiexplained-official",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "KI und Modelle"
     },
     {
-      "name": "Builders Central",
-      "handle": "@BuildersCentral",
-      "url": "https://www.youtube.com/@BuildersCentral",
+      "name": "Matthew Berman",
+      "handle": "@matthew_berman",
+      "url": "https://www.youtube.com/@matthew_berman",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "KI und Modelle"
     },
     {
-      "name": "The Utkarsh",
-      "handle": "@TheUtkarshhh",
-      "url": "https://www.youtube.com/@TheUtkarshhh",
+      "name": "Wes Roth",
+      "handle": "@WesRoth",
+      "url": "https://www.youtube.com/@WesRoth",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "KI und Modelle"
     },
     {
-      "name": "Ishan Sharma",
-      "handle": "@IshanSharma7390",
-      "url": "https://www.youtube.com/@IshanSharma7390",
+      "name": "Jeff Geerling",
+      "handle": "@JeffGeerling",
+      "url": "https://www.youtube.com/@JeffGeerling",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "Lokale KI und Hardware"
     },
     {
-      "name": "Nate Herk",
-      "handle": "@nateherk",
-      "url": "https://www.youtube.com/@nateherk",
+      "name": "NetworkChuck",
+      "handle": "@NetworkChuck",
+      "url": "https://www.youtube.com/@NetworkChuck",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "Lokale KI und Hardware"
     },
     {
-      "name": "Jack",
-      "handle": "@Itssssss_Jack",
-      "url": "https://www.youtube.com/@Itssssss_Jack",
+      "name": "Level1Techs",
+      "handle": "@Level1Techs",
+      "url": "https://www.youtube.com/@Level1Techs",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "Lokale KI und Hardware"
     },
     {
-      "name": "100x Engineers",
-      "handle": "@100xEngineers",
-      "url": "https://www.youtube.com/@100xEngineers",
+      "name": "TechTechPotato",
+      "handle": "@TechTechPotato",
+      "url": "https://www.youtube.com/@TechTechPotato",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "Lokale KI und Hardware"
     },
     {
-      "name": "AI Vishnu Vijayan",
-      "handle": "@Ai.Vishnuvijayan",
-      "url": "https://www.youtube.com/@Ai.Vishnuvijayan",
+      "name": "Proko",
+      "handle": "@ProkoTV",
+      "url": "https://www.youtube.com/@ProkoTV",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "Kunst und Malerei"
     },
     {
-      "name": "Eric W Tech",
-      "handle": "@EricWTech",
-      "url": "https://www.youtube.com/@EricWTech",
+      "name": "Draw Mix Paint",
+      "handle": "@DrawMixPaint",
+      "url": "https://www.youtube.com/@DrawMixPaint",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "Kunst und Malerei"
     },
     {
-      "name": "TG Films Course",
-      "handle": "@tgfilmscourse643",
-      "url": "https://www.youtube.com/@tgfilmscourse643",
+      "name": "James Gurney",
+      "handle": "@JamesGurney",
+      "url": "https://www.youtube.com/@JamesGurney",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "Kunst und Malerei"
     },
     {
-      "name": "Piyush Garg",
-      "handle": "@piyushgargdev",
-      "url": "https://www.youtube.com/@piyushgargdev",
+      "name": "Lachri Fine Art",
+      "handle": "@Lachri",
+      "url": "https://www.youtube.com/@Lachri",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "Kunst und Malerei"
     },
     {
-      "name": "Krumjahn",
-      "handle": "@krumjahn",
-      "url": "https://www.youtube.com/@krumjahn",
+      "name": "VaatiVidya",
+      "handle": "@VaatiVidya",
+      "url": "https://www.youtube.com/@VaatiVidya",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "Gaming und Soulslike"
     },
     {
-      "name": "Rakin Jakaria",
-      "handle": "@RakinJakaria",
-      "url": "https://www.youtube.com/@RakinJakaria",
+      "name": "Iron Pineapple",
+      "handle": "@IronPineapple",
+      "url": "https://www.youtube.com/@IronPineapple",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "Gaming und Soulslike"
     },
     {
-      "name": "Greg Preece",
-      "handle": "@GregPreece",
-      "url": "https://www.youtube.com/@GregPreece",
+      "name": "Fextralife",
+      "handle": "@Fextralife",
+      "url": "https://www.youtube.com/@Fextralife",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "Gaming und Soulslike"
     },
     {
-      "name": "Brendan Automation",
-      "handle": "@brendanautomation",
-      "url": "https://www.youtube.com/@brendanautomation",
+      "name": "Skill Up",
+      "handle": "@SkillUp",
+      "url": "https://www.youtube.com/@SkillUp",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "Gaming und neue Spiele"
     },
     {
-      "name": "Creative Pad Media",
-      "handle": "@CreativePadMedia",
-      "url": "https://www.youtube.com/@CreativePadMedia",
+      "name": "GameStar",
+      "handle": "@GameStar",
+      "url": "https://www.youtube.com/@GameStar",
       "monitorLong": true,
-      "monitorShorts": true,
+      "monitorShorts": false,
       "priority": 1,
-      "category": "Long + Shorts"
+      "category": "Gaming deutsch"
     },
     {
-      "name": "H Gandotra",
-      "handle": "@Hgandotra",
-      "url": "https://www.youtube.com/@Hgandotra",
+      "name": "PC Games",
+      "handle": "@PCGames",
+      "url": "https://www.youtube.com/@PCGames",
       "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "VDM Social",
-      "handle": "@vdmsocial1",
-      "url": "https://www.youtube.com/@vdmsocial1",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Hasan Aboul Hasan",
-      "handle": "@hasanaboulhasan",
-      "url": "https://www.youtube.com/@hasanaboulhasan",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Professor of AI",
-      "handle": "@professorofai.official",
-      "url": "https://www.youtube.com/@professorofai.official",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Get to the Next Level",
-      "handle": "@gettothenextlevel",
-      "url": "https://www.youtube.com/@gettothenextlevel",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Chase H AI",
-      "handle": "@Chase-H-AI",
-      "url": "https://www.youtube.com/@Chase-H-AI",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Charlie Automates",
-      "handle": "@charlieautomates",
-      "url": "https://www.youtube.com/@charlieautomates",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Lead Gen Man",
-      "handle": "@LeadGenMan",
-      "url": "https://www.youtube.com/@LeadGenMan",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Coding Simplified Space",
-      "handle": "@codingsimplifiedspace",
-      "url": "https://www.youtube.com/@codingsimplifiedspace",
-      "monitorLong": true,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Long + Shorts"
-    },
-    {
-      "name": "Rahul Iyer AI",
-      "handle": "@RahulIyerAI",
-      "url": "https://www.youtube.com/@RahulIyerAI",
-      "monitorLong": false,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Shorts Only"
-    },
-    {
-      "name": "Insider Force",
-      "handle": "@InsiderForce",
-      "url": "https://www.youtube.com/@InsiderForce",
-      "monitorLong": false,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Shorts Only"
-    },
-    {
-      "name": "AI Adventurer",
-      "handle": "@aiadventurer-p1l",
-      "url": "https://www.youtube.com/@aiadventurer-p1l",
-      "monitorLong": false,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Shorts Only"
-    },
-    {
-      "name": "BPro Club",
-      "handle": "@Bproclub",
-      "url": "https://www.youtube.com/@Bproclub",
-      "monitorLong": false,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Shorts Only"
-    },
-    {
-      "name": "Yury AI",
-      "handle": "@Yury_AI",
-      "url": "https://www.youtube.com/@Yury_AI",
-      "monitorLong": false,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Shorts Only"
-    },
-    {
-      "name": "Sid Curious",
-      "handle": "@sid.curious",
-      "url": "https://www.youtube.com/@sid.curious",
-      "monitorLong": false,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Shorts Only"
-    },
-    {
-      "name": "Nick Automates",
-      "handle": "@nickautomates",
-      "url": "https://www.youtube.com/@nickautomates",
-      "monitorLong": false,
-      "monitorShorts": true,
-      "priority": 1,
-      "category": "Shorts Only"
+      "monitorShorts": false,
+      "priority": 2,
+      "category": "Gaming deutsch"
     }
   ],
   "keywords": [
-    "AI automation",
-    "AI agents",
-    "generative AI tools",
-    "no-code automation",
-    "AI software development"
+    "neue KI Modelle deutsch",
+    "new AI model release",
+    "lokale KI deutsch",
+    "local AI Qwen Ollama llama.cpp",
+    "local LLM hardware GPU benchmark",
+    "Kunst Malerei Tutorial deutsch",
+    "painting art tutorial",
+    "neue Soulslike Spiele deutsch",
+    "new Soulslike games"
   ],
   "topics": [
-    "Artificial Intelligence",
-    "Automation",
-    "Software Development"
+    "KI und neue KI-Modelle",
+    "Lokale KI",
+    "Kunst und Malerei",
+    "Gaming und Soulslike"
   ],
   "categories": [
-    "AI coding tools",
-    "agency automation",
-    "digital marketing automation"
+    "AI models and research",
+    "Qwen Ollama llama.cpp and hardware",
+    "painting and visual art",
+    "Soulslike and new games"
   ]
 }
