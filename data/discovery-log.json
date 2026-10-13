@@ -1,7 +1,71 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T09:51:40Z",
+  "updatedAt": "2026-10-13T11:05:14Z",
   "items": [
+    {
+      "id": "z_sXLlLVUls",
+      "type": "long",
+      "source": "primary",
+      "channel": "Two Minute Papers",
+      "publishedAt": "2026-10-13T08:56:12Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
+    {
+      "id": "rpLrkJ5NNEI",
+      "type": "long",
+      "source": "primary",
+      "channel": "Matthew Berman",
+      "publishedAt": "2026-10-13T00:47:04Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
+    {
+      "id": "C4Sq3Rot8FU",
+      "type": "long",
+      "source": "primary",
+      "channel": "AI Explained",
+      "publishedAt": "2026-10-12T22:52:31Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
+    {
+      "id": "F3WRkveX4PU",
+      "type": "long",
+      "source": "primary",
+      "channel": "GameStar",
+      "publishedAt": "2026-10-12T15:58:14Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
+    {
+      "id": "S0JwWcLVzQA",
+      "type": "long",
+      "source": "primary",
+      "channel": "Wes Roth",
+      "publishedAt": "2026-10-13T04:16:47Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
+    {
+      "id": "eIxo_5gv9v4",
+      "type": "long",
+      "source": "primary",
+      "channel": "PC Games",
+      "publishedAt": "2026-10-12T16:00:01Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
+    {
+      "id": "Bjifz55TTPI",
+      "type": "long",
+      "source": "primary",
+      "channel": "NetworkChuck",
+      "publishedAt": "2026-10-12T14:19:35Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
+    {
+      "id": "WYn3gHaJm0o",
+      "type": "long",
+      "source": "primary",
+      "channel": "Fextralife",
+      "publishedAt": "2026-10-12T13:00:25Z",
+      "firstSeenAt": "2026-10-13T11:05:14Z"
+    },
     {
       "id": "Z8Io_BX0_84",
       "type": "long",
@@ -20961,30 +21025,6 @@
       "channel": "Ishan Sharma",
       "publishedAt": "2026-07-15T14:30:13Z",
       "firstSeenAt": "2026-07-15T14:30:13Z"
-    },
-    {
-      "id": "tY8W-kLG5do",
-      "type": "short",
-      "source": "primary",
-      "channel": "VDM Social",
-      "publishedAt": "2026-07-15T07:11:10Z",
-      "firstSeenAt": "2026-07-15T07:11:10Z"
-    },
-    {
-      "id": "2yqWKL8majc",
-      "type": "long",
-      "source": "primary",
-      "channel": "Ishan Sharma",
-      "publishedAt": "2026-07-14T14:44:43Z",
-      "firstSeenAt": "2026-07-14T14:44:43Z"
-    },
-    {
-      "id": "0a2SY8L6L7o",
-      "type": "long",
-      "source": "primary",
-      "channel": "Brendan Automation",
-      "publishedAt": "2026-07-14T11:50:09Z",
-      "firstSeenAt": "2026-07-14T11:50:09Z"
     }
   ],
   "runs": [
@@ -21014,6 +21054,15 @@
       "channelsChecked": 18,
       "warnings": 0,
       "secondaryQuery": "Gaming und Soulslike"
+    },
+    {
+      "runAt": "2026-10-13T11:05:14Z",
+      "new": 8,
+      "long": 8,
+      "shorts": 0,
+      "channelsChecked": 18,
+      "warnings": 0,
+      "secondaryQuery": "local LLM hardware GPU benchmark"
     }
   ]
 }
