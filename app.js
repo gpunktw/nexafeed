@@ -2726,6 +2726,17 @@ function applySearchInput() {
   render();
 }
 
+function openYouTubeSearch() {
+  const query = searchInput.value.trim();
+  if (!query) {
+    searchInput.focus();
+    return;
+  }
+  const target = new URL("https://www.youtube.com/results");
+  target.searchParams.set("search_query", query);
+  window.open(target.toString(), "_blank", "noopener,noreferrer");
+}
+
 function scrollShortCarousel(direction) {
   const row = document.querySelector("#shortsCarousel");
   if (!row) return;
@@ -2813,6 +2824,7 @@ document.querySelector("#searchForm").addEventListener("submit", (event) => {
   applySearchInput();
 });
 searchInput.addEventListener("input", applySearchInput);
+document.querySelector("#youtubeSearchButton").addEventListener("click", openYouTubeSearch);
 document.querySelector("#mainNav").addEventListener("click", (event) => {
   const button = event.target.closest("[data-view]");
   if (button) selectView(button.dataset.view);

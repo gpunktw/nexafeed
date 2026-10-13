@@ -27,6 +27,12 @@
     "painting and visual art",
     "Soulslike and new games"
   ],
+  "discoveryQueryLanes": [
+    { "topic": "KI und neue KI-Modelle", "de": "neue KI Modelle deutsch", "en": "new AI model release" },
+    { "topic": "Lokale KI", "de": "lokale KI Qwen Ollama llama.cpp Hardware deutsch", "en": "local AI Qwen Ollama llama.cpp hardware" },
+    { "topic": "Kunst und Malerei", "de": "Kunst Malerei Tutorial deutsch", "en": "painting art tutorial" },
+    { "topic": "Gaming und Soulslike", "de": "neue Soulslike Spiele deutsch", "en": "new Soulslike games" }
+  ],
   "primaryLongPerChannel": 5,
   "primaryShortsPerChannel": 5,
   "shortsMetadataPerChannel": 2,
@@ -44,9 +50,12 @@
   "commentsMaxVideos": 40,
   "commentsPerVideo": 8,
   "commentsTtlHours": 24,
-  "secondaryResultsPerQuery": 8,
+  "secondaryQueriesPerRun": 4,
+  "secondaryResultsPerQuery": 10,
+  "secondaryMaxPerChannelPerRun": 2,
+  "secondaryMaxAgeDays": 30,
   "secondaryRetentionHours": 168,
-  "secondarySearchFilter": "EgIIAg==",
+  "secondarySearchFilter": "EgIIAw==",
   "feedRetentionDays": 30,
   "shortMaxSeconds": 180,
   "freshHours": 24,

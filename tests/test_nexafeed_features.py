@@ -26,6 +26,25 @@ def load_module(name: str, path: Path):
 
 
 class FrontendFeatureTests(unittest.TestCase):
+    def test_youtube_search_opens_the_current_query_without_an_api(self):
+        app_js = (ROOT / "app.js").read_text(encoding="utf-8")
+        index_html = (ROOT / "index.html").read_text(encoding="utf-8")
+
+        for marker in [
+            'id="youtubeSearchButton"',
+            'aria-label="Auf YouTube suchen"',
+            '>YouTube ↗</button>',
+        ]:
+            self.assertIn(marker, index_html)
+        for marker in [
+            "function openYouTubeSearch()",
+            'new URL("https://www.youtube.com/results")',
+            'target.searchParams.set("search_query", query)',
+            'window.open(target.toString(), "_blank", "noopener,noreferrer")',
+            'document.querySelector("#youtubeSearchButton").addEventListener("click", openYouTubeSearch)',
+        ]:
+            self.assertIn(marker, app_js)
+
     def test_manual_skip_uses_ignored_list_and_watch_thresholds(self):
         app_js = (ROOT / "app.js").read_text(encoding="utf-8")
         index_html = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -66,8 +85,8 @@ class FrontendFeatureTests(unittest.TestCase):
             'data-view="ignored"',
             'id="ignoredCount"',
             "Ignored videos",
-            "app.js?v=20261013-thumbnail-fallback-2",
-            "style.css?v=20260821-gemini-brief",
+            "app.js?v=20261013-discovery-search",
+            "style.css?v=20261013-discovery-search",
         ]:
             self.assertIn(marker, index_html)
 
@@ -95,8 +114,8 @@ class FrontendFeatureTests(unittest.TestCase):
         ]:
             self.assertIn(marker, app_js)
 
-        self.assertIn("app.js?v=20261013-thumbnail-fallback-2", index_html)
-        self.assertIn("style.css?v=20260821-gemini-brief", index_html)
+        self.assertIn("app.js?v=20261013-discovery-search", index_html)
+        self.assertIn("style.css?v=20261013-discovery-search", index_html)
         self.assertIn("still present in the active feed is protected from pruning", readme)
 
     def test_skip_thresholds_do_not_recreate_old_five_second_watch_rule(self):
@@ -572,8 +591,8 @@ class FrontendFeatureTests(unittest.TestCase):
 
         self.assertIn("gemini-button", style_css)
         self.assertIn("gemini-icon", style_css)
-        self.assertIn("app.js?v=20261013-thumbnail-fallback-2", index_html)
-        self.assertIn("style.css?v=20260821-gemini-brief", index_html)
+        self.assertIn("app.js?v=20261013-discovery-search", index_html)
+        self.assertIn("style.css?v=20261013-discovery-search", index_html)
 
     def test_wheel_scroll_over_youtube_iframe_is_captured(self):
         app_js = (ROOT / "app.js").read_text(encoding="utf-8")
@@ -752,8 +771,8 @@ class FrontendFeatureTests(unittest.TestCase):
         self.assertIn('id="brandButton" class="brand" href="./"', index_html)
         self.assertIn("YourTube - A personal YouTube Package", index_html)
         self.assertIn("Watch only those valuable for you", index_html)
-        self.assertIn("style.css?v=20260821-gemini-brief", index_html)
-        self.assertIn("app.js?v=20261013-thumbnail-fallback-2", index_html)
+        self.assertIn("style.css?v=20261013-discovery-search", index_html)
+        self.assertIn("app.js?v=20261013-discovery-search", index_html)
         self.assertIn('aria-label="YourTube home"', index_html)
         self.assertIn('data-view="liked"', index_html)
         self.assertIn('id="likedCount"', index_html)
@@ -987,6 +1006,78 @@ class EmailDeliveryTests(unittest.TestCase):
 
 
 class ProbePlanningTests(unittest.TestCase):
+    def test_discovery_covers_four_topics_and_flips_language_each_four_hour_slot(self):
+        updater = load_module("nexafeed_update_discovery_plan", ROOT / "scripts/nexafeed_update.py")
+        config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+        now = updater.parse_datetime("2026-10-13T08:00:00Z")
+
+        first = updater.discovery_query_plan(config, now)
+        second = updater.discovery_query_plan(config, now + updater.dt.timedelta(hours=4))
+
+        self.assertEqual(len(first), 4)
+        self.assertEqual({entry["topic"] for entry in first}, {
+            "KI und neue KI-Modelle",
+            "Lokale KI",
+            "Kunst und Malerei",
+            "Gaming und Soulslike",
+        })
+        self.assertEqual([entry["language"] for entry in first].count("de"), 2)
+        self.assertEqual([entry["language"] for entry in first].count("en"), 2)
+        self.assertEqual(
+            {entry["topic"]: entry["language"] for entry in second},
+            {entry["topic"]: ("en" if entry["language"] == "de" else "de") for entry in first},
+        )
+
+    def test_discovery_limits_each_channel_to_two_results(self):
+        updater = load_module("nexafeed_update_discovery_collection", ROOT / "scripts/nexafeed_update.py")
+        config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+        now = updater.parse_datetime("2026-10-13T08:00:00Z")
+        call_index = 0
+
+        def fake_fetch(url, timeout=60):
+            nonlocal call_index
+            call_index += 1
+            return str(call_index)
+
+        def fake_parse(text, current_now, limit):
+            query_number = int(text)
+            channel_id = f"channel-{query_number}"
+            return [
+                {
+                    "id": f"video-{query_number}-{candidate_number}",
+                    "title": f"Video {query_number}-{candidate_number}",
+                    "channel": f"Channel {query_number}",
+                    "channelId": channel_id,
+                    "handle": f"@channel{query_number}",
+                    "thumbnail": "https://i.ytimg.com/vi/example/hqdefault.jpg",
+                    "durationSeconds": 600,
+                    "viewCount": 100,
+                    "publishedAt": updater.iso_utc(current_now - updater.dt.timedelta(days=candidate_number)),
+                    "publishedLabel": f"{candidate_number} days ago",
+                }
+                for candidate_number in range(1, 4)
+            ]
+
+        original_fetch = updater.fetch_text
+        original_parse = updater.parse_search_results
+        try:
+            updater.fetch_text = fake_fetch
+            updater.parse_search_results = fake_parse
+            items, status = updater.collect_secondary(config, [], set(), now, False)
+        finally:
+            updater.fetch_text = original_fetch
+            updater.parse_search_results = original_parse
+
+        self.assertEqual(call_index, 4)
+        self.assertEqual(len(items), 8)
+        self.assertEqual(len(status["queries"]), 4)
+        self.assertEqual(status["newResults"], 8)
+        self.assertIsNone(status["error"])
+        channel_counts = {}
+        for item in items:
+            channel_counts[item["channelId"]] = channel_counts.get(item["channelId"], 0) + 1
+        self.assertEqual(set(channel_counts.values()), {2})
+
     def test_daily_archive_retains_all_items_from_thirty_bangladesh_calendar_days(self):
         updater = load_module("nexafeed_update_archive", ROOT / "scripts/nexafeed_update.py")
         now = updater.parse_datetime("2026-08-20T02:00:00Z")  # 08:00 in Asia/Dhaka

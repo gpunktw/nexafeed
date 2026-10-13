@@ -184,7 +184,10 @@ def apply_env_overrides(config: dict[str, Any]) -> dict[str, Any]:
         "NEXAFEED_COMMENTS_MAX_VIDEOS": "commentsMaxVideos",
         "NEXAFEED_COMMENTS_PER_VIDEO": "commentsPerVideo",
         "NEXAFEED_COMMENTS_TTL_HOURS": "commentsTtlHours",
+        "NEXAFEED_SECONDARY_QUERIES_PER_RUN": "secondaryQueriesPerRun",
         "NEXAFEED_SECONDARY_RESULTS_PER_QUERY": "secondaryResultsPerQuery",
+        "NEXAFEED_SECONDARY_MAX_PER_CHANNEL_PER_RUN": "secondaryMaxPerChannelPerRun",
+        "NEXAFEED_SECONDARY_MAX_AGE_DAYS": "secondaryMaxAgeDays",
         "NEXAFEED_SECONDARY_RETENTION_HOURS": "secondaryRetentionHours",
         "NEXAFEED_SHORT_MAX_SECONDS": "shortMaxSeconds",
         "NEXAFEED_FRESH_HOURS": "freshHours",
@@ -1144,6 +1147,39 @@ def collect_channel(
     }
 
 
+def discovery_query_plan(config: dict[str, Any], now: dt.datetime) -> list[dict[str, str]]:
+    lanes = [lane for lane in config.get("discoveryQueryLanes", []) if isinstance(lane, dict)]
+    query_limit = max(1, int(config.get("secondaryQueriesPerRun", 4)))
+    if lanes:
+        run_slot = int(now.timestamp() // (4 * 3600))
+        plan = []
+        for index, lane in enumerate(lanes[:query_limit]):
+            language = "de" if (run_slot + index) % 2 == 0 else "en"
+            query = str(lane.get(language) or "").strip()
+            if query:
+                plan.append({
+                    "topic": str(lane.get("topic") or query).strip(),
+                    "language": language,
+                    "query": query,
+                })
+        if plan:
+            return plan
+
+    terms = [
+        str(term).strip()
+        for group in ("keywords", "topics", "categories")
+        for term in config.get(group, [])
+        if str(term).strip()
+    ]
+    if not terms:
+        return []
+    start = int(now.timestamp() // 3600) % len(terms)
+    return [
+        {"topic": terms[(start + offset) % len(terms)], "language": "unknown", "query": terms[(start + offset) % len(terms)]}
+        for offset in range(min(query_limit, len(terms)))
+    ]
+
+
 def collect_secondary(
     config: dict[str, Any],
     previous_items: list[dict[str, Any]],
@@ -1151,12 +1187,7 @@ def collect_secondary(
     now: dt.datetime,
     bootstrap: bool,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    terms = [
-        str(term).strip()
-        for group in ("keywords", "topics", "categories")
-        for term in config.get(group, [])
-        if str(term).strip()
-    ]
+    query_plan = discovery_query_plan(config, now)
     previous_secondary = [item for item in previous_items if item.get("source") == "secondary"]
     cutoff = now - dt.timedelta(hours=int(config.get("secondaryRetentionHours", 168)))
     retained = [
@@ -1164,38 +1195,56 @@ def collect_secondary(
         for item in previous_secondary
         if (parse_datetime(item.get("publishedAt")) or dt.datetime.min.replace(tzinfo=UTC)) >= cutoff
     ]
-    if not terms:
-        return retained, {"query": None, "newResults": 0, "error": None}
-    hour_index = int(now.timestamp() // 3600) % len(terms)
-    query = terms[hour_index]
-    params = urllib.parse.urlencode(
-        {
-            "search_query": query,
-            "sp": config.get("secondarySearchFilter", "EgIIAg=="),
-        }
-    )
-    try:
-        text = fetch_text("https://www.youtube.com/results?" + params, timeout=60)
-        results = parse_search_results(text, now, int(config.get("secondaryResultsPerQuery", 8)))
-    except Exception as exc:
-        return retained, {"query": query, "newResults": 0, "error": str(exc)}
+    if not query_plan:
+        return retained, {"query": None, "queries": [], "newResults": 0, "error": None}
 
     previous_by_id = {item["id"]: item for item in previous_secondary if item.get("id")}
     short_max = int(config.get("shortMaxSeconds", 180))
+    max_age = dt.timedelta(days=max(1, int(config.get("secondaryMaxAgeDays", 30))))
+    channel_limit = max(1, int(config.get("secondaryMaxPerChannelPerRun", 2)))
+    per_query_limit = max(1, int(config.get("secondaryResultsPerQuery", 10)))
     new_items: list[dict[str, Any]] = []
-    for candidate in results:
-        if candidate.get("channelId") in primary_channel_ids:
+    seen_this_run: set[str] = set()
+    channel_counts: Counter[str] = Counter()
+    query_statuses: list[dict[str, Any]] = []
+    language_counts: Counter[str] = Counter()
+    errors: list[str] = []
+
+    for planned in query_plan:
+        params = urllib.parse.urlencode({
+            "search_query": planned["query"],
+            "sp": config.get("secondarySearchFilter", "EgIIAw=="),
+        })
+        try:
+            text = fetch_text("https://www.youtube.com/results?" + params, timeout=60)
+            results = parse_search_results(text, now, per_query_limit)
+        except Exception as exc:
+            error = str(exc)
+            errors.append(f"{planned['query']}: {error}")
+            query_statuses.append({**planned, "acceptedResults": 0, "newResults": 0, "error": error})
             continue
-        published = candidate.get("publishedAt")
-        if not published:
-            continue
-        old = previous_by_id.get(candidate["id"], {})
-        item_type = "short" if int(candidate.get("durationSeconds") or 0) <= short_max else "long"
-        first_seen = old.get("firstSeenAt") or (published if bootstrap else iso_utc(now))
-        view_count = candidate.get("viewCount")
-        new_items.append(
-            {
-                "id": candidate["id"],
+
+        accepted = 0
+        discovered = 0
+        for candidate in results:
+            video_id = candidate.get("id")
+            if not video_id or video_id in seen_this_run or candidate.get("channelId") in primary_channel_ids:
+                continue
+            published = candidate.get("publishedAt")
+            published_at = parse_datetime(published)
+            if not published_at or published_at < now - max_age or published_at > now + dt.timedelta(hours=1):
+                continue
+            channel_key = str(candidate.get("channelId") or candidate.get("handle") or candidate.get("channel") or "unknown").casefold()
+            if channel_counts[channel_key] >= channel_limit:
+                continue
+            seen_this_run.add(video_id)
+            channel_counts[channel_key] += 1
+            old = previous_by_id.get(video_id, {})
+            item_type = "short" if int(candidate.get("durationSeconds") or 0) <= short_max else "long"
+            first_seen = old.get("firstSeenAt") or (published if bootstrap else iso_utc(now))
+            view_count = candidate.get("viewCount")
+            new_items.append({
+                "id": video_id,
                 "type": item_type,
                 "title": candidate["title"],
                 "channel": candidate["channel"],
@@ -1213,10 +1262,16 @@ def collect_secondary(
                 "firstSeenAt": first_seen,
                 "source": "secondary",
                 "priority": 99,
-                "topic": query,
-                "url": f"https://www.youtube.com/{'shorts/' if item_type == 'short' else 'watch?v='}{candidate['id']}",
-            }
-        )
+                "topic": planned["topic"],
+                "discoveryLanguage": planned["language"],
+                "discoveryQuery": planned["query"],
+                "url": f"https://www.youtube.com/{'shorts/' if item_type == 'short' else 'watch?v='}{video_id}",
+            })
+            accepted += 1
+            if video_id not in previous_by_id:
+                discovered += 1
+                language_counts[planned["language"]] += 1
+        query_statuses.append({**planned, "acceptedResults": accepted, "newResults": discovered, "error": None})
 
     merged: dict[str, dict[str, Any]] = {item["id"]: item for item in retained if item.get("id")}
     for item in new_items:
@@ -1225,8 +1280,15 @@ def collect_secondary(
         merged.values(),
         key=lambda item: parse_datetime(item.get("publishedAt")) or dt.datetime.min.replace(tzinfo=UTC),
         reverse=True,
-    )[: max(40, int(config.get("secondaryResultsPerQuery", 8)) * 5)]
-    return ordered, {"query": query, "newResults": len(new_items), "error": None}
+    )[: max(40, per_query_limit * len(query_plan) * 2)]
+    return ordered, {
+        "query": " | ".join(planned["query"] for planned in query_plan),
+        "queries": query_statuses,
+        "newResults": sum(status["newResults"] for status in query_statuses),
+        "acceptedResults": len(new_items),
+        "languages": dict(language_counts),
+        "error": " | ".join(errors) if errors else None,
+    }
 
 
 def build_settings_document(
