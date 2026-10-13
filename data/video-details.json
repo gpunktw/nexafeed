@@ -1,5 +1,18 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T11:30:38Z",
-  "items": {}
+  "updatedAt": "2026-10-13T11:36:50Z",
+  "items": {
+    "_qLUvCeu19E": {
+      "checkedAt": "2026-10-13T11:36:50Z",
+      "embedAllowed": false,
+      "availability": "members_only",
+      "failureReason": "members_only"
+    },
+    "c9CAw6MCGJE": {
+      "checkedAt": "2026-10-13T11:36:50Z",
+      "embedAllowed": false,
+      "availability": "unavailable",
+      "failureReason": "unavailable"
+    }
+  }
 }

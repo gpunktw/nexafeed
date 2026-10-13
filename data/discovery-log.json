@@ -1,7 +1,319 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T11:30:38Z",
+  "updatedAt": "2026-10-13T11:36:50Z",
   "items": [
+    {
+      "id": "7iBd3bxU-uE",
+      "type": "long",
+      "source": "primary",
+      "channel": "VaatiVidya",
+      "publishedAt": "2026-04-16T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "e4v-vymG_hs",
+      "type": "long",
+      "source": "primary",
+      "channel": "VaatiVidya",
+      "publishedAt": "2026-03-17T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "TFWUX_j1sBE",
+      "type": "long",
+      "source": "primary",
+      "channel": "VaatiVidya",
+      "publishedAt": "2026-02-15T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "ZQ_tgXB4u2Q",
+      "type": "long",
+      "source": "primary",
+      "channel": "VaatiVidya",
+      "publishedAt": "2025-12-17T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "MuiHLx7gHKM",
+      "type": "long",
+      "source": "primary",
+      "channel": "James Gurney",
+      "publishedAt": "2025-10-13T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "YQ8Z9pLY3nw",
+      "type": "long",
+      "source": "primary",
+      "channel": "James Gurney",
+      "publishedAt": "2025-10-13T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "cxjPnzImsEU",
+      "type": "long",
+      "source": "primary",
+      "channel": "PC Games",
+      "publishedAt": "2026-10-07T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "VrhSTaxrELU",
+      "type": "long",
+      "source": "secondary",
+      "channel": "SmartSolution-4u KI & Automation",
+      "publishedAt": "2026-10-13T05:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "V6A9NoR1Cdw",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Nichonauta",
+      "publishedAt": "2026-10-12T23:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "IsGtCcHE0xs",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Laxmi Kant | KGP Talkie",
+      "publishedAt": "2026-10-12T20:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "eo3PXrU-keU",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Mr Meeko",
+      "publishedAt": "2026-10-12T18:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "rz_I1rU4828",
+      "type": "long",
+      "source": "secondary",
+      "channel": "MikesWorld",
+      "publishedAt": "2026-10-12T16:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "SOcdaG5KZbs",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Christoph Magnussen",
+      "publishedAt": "2026-10-12T15:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "IMVjEsKX5UQ",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Kai",
+      "publishedAt": "2026-10-12T15:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "XLiK1Mh2QRo",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Hinter der Leinwand",
+      "publishedAt": "2026-10-12T15:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "flfoVkkOLL0",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Julian Ivanov | KI-Automatisierung",
+      "publishedAt": "2026-10-12T14:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "OIlk2qMqDwE",
+      "type": "long",
+      "source": "secondary",
+      "channel": "I Dream of Indie Games",
+      "publishedAt": "2026-10-12T13:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "9QZdElyEJOg",
+      "type": "short",
+      "source": "secondary",
+      "channel": "SmartSolution-4u KI & Automation",
+      "publishedAt": "2026-10-12T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "KPAEItMQP-E",
+      "type": "long",
+      "source": "secondary",
+      "channel": "BigIron AI",
+      "publishedAt": "2026-10-12T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "ABo91haZ1xk",
+      "type": "short",
+      "source": "secondary",
+      "channel": "EvgenyJackPot auf Deutsch",
+      "publishedAt": "2026-10-12T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "X6LFTq_esqM",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Running Local",
+      "publishedAt": "2026-10-11T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "fYLpBnumJZc",
+      "type": "long",
+      "source": "secondary",
+      "channel": "KernelBrief",
+      "publishedAt": "2026-10-11T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "cPXNZ6_AqqA",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Kuenstlerstreich",
+      "publishedAt": "2026-10-11T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "5F5osZrn8Rg",
+      "type": "long",
+      "source": "secondary",
+      "channel": "AI Revolution auf Deutsch",
+      "publishedAt": "2026-10-10T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "wC9z3Yq6coY",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Levin AI",
+      "publishedAt": "2026-10-10T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "moppXgqNHcc",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Running Local",
+      "publishedAt": "2026-10-10T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "FWJEh7iWVd4",
+      "type": "short",
+      "source": "secondary",
+      "channel": "Siyat's Earth Canvas",
+      "publishedAt": "2026-10-10T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "W2yjea01Zhg",
+      "type": "short",
+      "source": "secondary",
+      "channel": "EvgenyJackPot auf Deutsch",
+      "publishedAt": "2026-10-09T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "cgEjNZjUAuY",
+      "type": "short",
+      "source": "secondary",
+      "channel": "Lumare Club - kreative Auszeit mit Lisa Albrecht",
+      "publishedAt": "2026-10-09T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "0nCBeDi7jug",
+      "type": "short",
+      "source": "secondary",
+      "channel": "ARTMIE Deutsch",
+      "publishedAt": "2026-10-09T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "-u6YQd40_-4",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Tensor Garage",
+      "publishedAt": "2026-10-08T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "W__LZVMOvw0",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Ruesafer",
+      "publishedAt": "2026-10-08T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "C5UaukpSgfo",
+      "type": "long",
+      "source": "secondary",
+      "channel": "PlayFutureGames",
+      "publishedAt": "2026-10-08T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "DBRTGwGqdHE",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Rion Weyler",
+      "publishedAt": "2026-10-07T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "Iu1E3q_kIEc",
+      "type": "long",
+      "source": "secondary",
+      "channel": "Coding Horizon",
+      "publishedAt": "2026-10-07T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "ImzBJ8xB7Xs",
+      "type": "short",
+      "source": "secondary",
+      "channel": "ARTMIE Deutsch",
+      "publishedAt": "2026-10-07T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "CfF5ZOPz29E",
+      "type": "short",
+      "source": "secondary",
+      "channel": "Siyat's Earth Canvas",
+      "publishedAt": "2026-10-07T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "UXaHmUCombo",
+      "type": "long",
+      "source": "secondary",
+      "channel": "mordisch",
+      "publishedAt": "2026-10-06T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
+    {
+      "id": "hqbuZK-kdCA",
+      "type": "short",
+      "source": "secondary",
+      "channel": "Malen mit Anke",
+      "publishedAt": "2026-10-06T11:36:50Z",
+      "firstSeenAt": "2026-10-13T11:36:50Z"
+    },
     {
       "id": "z_sXLlLVUls",
       "type": "long",
@@ -21071,6 +21383,15 @@
       "shorts": 0,
       "channelsChecked": 18,
       "warnings": 0,
+      "secondaryQuery": "neue KI Modelle deutsch | local AI Qwen Ollama llama.cpp hardware | Kunst Malerei Tutorial deutsch | new Soulslike games"
+    },
+    {
+      "runAt": "2026-10-13T11:36:50Z",
+      "new": 39,
+      "long": 30,
+      "shorts": 9,
+      "channelsChecked": 18,
+      "warnings": 1,
       "secondaryQuery": "neue KI Modelle deutsch | local AI Qwen Ollama llama.cpp hardware | Kunst Malerei Tutorial deutsch | new Soulslike games"
     }
   ]
