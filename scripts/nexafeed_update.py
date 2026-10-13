@@ -380,9 +380,25 @@ def relative_time_to_iso(label: str | None, now: dt.datetime) -> str | None:
         return iso_utc(now)
     match = re.search(r"(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago", text)
     if not match:
-        return None
-    amount = int(match.group(1))
-    unit = match.group(2)
+        compact = re.search(r"(\d+)\s*(s|min|h|d|w|mo|y)\s+ago", text)
+        if compact:
+            compact_units = {
+                "s": "second",
+                "min": "minute",
+                "h": "hour",
+                "d": "day",
+                "w": "week",
+                "mo": "month",
+                "y": "year",
+            }
+            amount = int(compact.group(1))
+            unit = compact_units[compact.group(2)]
+            match = None
+        else:
+            return None
+    else:
+        amount = int(match.group(1))
+        unit = match.group(2)
     seconds = {
         "second": 1,
         "minute": 60,

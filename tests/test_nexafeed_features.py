@@ -1006,6 +1006,14 @@ class EmailDeliveryTests(unittest.TestCase):
 
 
 class ProbePlanningTests(unittest.TestCase):
+    def test_compact_youtube_relative_times_are_accepted(self):
+        updater = load_module("nexafeed_update_compact_times", ROOT / "scripts/nexafeed_update.py")
+        now = updater.parse_datetime("2026-10-13T12:00:00Z")
+
+        self.assertEqual(updater.relative_time_to_iso("20h ago", now), "2026-10-12T16:00:00Z")
+        self.assertEqual(updater.relative_time_to_iso("5d ago", now), "2026-10-08T12:00:00Z")
+        self.assertEqual(updater.relative_time_to_iso("2w ago", now), "2026-09-29T12:00:00Z")
+
     def test_discovery_covers_four_topics_and_flips_language_each_four_hour_slot(self):
         updater = load_module("nexafeed_update_discovery_plan", ROOT / "scripts/nexafeed_update.py")
         config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
