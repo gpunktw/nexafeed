@@ -1035,6 +1035,15 @@ class ProbePlanningTests(unittest.TestCase):
             ),
             "https://i.ytimg.com/vi/00kEcNby86c/hqdefault.jpg",
         )
+        self.assertEqual(
+            updater.normalize_thumbnail_url("https://i.ytimg.com/vi/00kEcNby86c/hq720_custom_3.jpg?bad=1"),
+            "https://i.ytimg.com/vi/00kEcNby86c/hq720.jpg",
+        )
+        app_js = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn("function advanceThumbnailFallback(image)", app_js)
+        self.assertIn("this.naturalWidth<=120&&this.naturalHeight<=90", app_js)
+        self.assertIn('"hqdefault.jpg"', app_js)
+        self.assertIn('"mqdefault.jpg"', app_js)
 
     def test_comment_probe_command_is_opt_in(self):
         updater = load_module("nexafeed_update", ROOT / "scripts/nexafeed_update.py")

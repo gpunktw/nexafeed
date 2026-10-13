@@ -92,6 +92,8 @@ def bangladesh_date_key(value: str | None) -> str | None:
 
 def normalize_thumbnail_url(value: object) -> str:
     thumbnail = html.unescape(str(value or "")).split("?", 1)[0]
+    if re.search(r"(?i)^https?://i\.ytimg\.com/vi/[^/]+/[^/]*_custom_[^/]*\.jpg$", thumbnail):
+        return re.sub(r"/[^/]+$", "/hq720.jpg", thumbnail)
     return thumbnail.replace("/frame0.jpg", "/hqdefault.jpg")
 
 

@@ -1266,14 +1266,26 @@ function youtubeThumbnailFallbackChain(videoId) {
     "hq720.jpg",
     "hqdefault.jpg",
     "mqdefault.jpg",
-    "default.jpg",
   ].map((variant) => `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/${variant}`);
 }
 
+function advanceThumbnailFallback(image) {
+  if (!image || image.dataset.fallbackIndex === "done") return;
+  const fallbacks = youtubeThumbnailFallbackChain(image.dataset.videoThumbId).slice(1);
+  let index = Number(image.dataset.fallbackIndex || 0);
+  while (index < fallbacks.length && image.src === fallbacks[index]) index += 1;
+  if (index >= fallbacks.length) {
+    image.dataset.fallbackIndex = "done";
+    image.onerror = null;
+    image.onload = null;
+    return;
+  }
+  image.dataset.fallbackIndex = String(index + 1);
+  image.src = fallbacks[index];
+}
+
 function thumbnailImage(video) {
-  const fallbackChain = youtubeThumbnailFallbackChain(video.id);
-  const fallbackSrc = fallbackChain.slice(1).join("','");
-  return `<img src="${escapeHtml(video.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-video-thumb-id="${escapeHtml(video.id)}" onerror="if(this.dataset.fallbackIndex==='done')return;const f=['${fallbackSrc}'];let i=Number(this.dataset.fallbackIndex||0);if(i<f.length){this.src=f[i];this.dataset.fallbackIndex=String(i+1);}else{this.dataset.fallbackIndex='done';this.onerror=null;this.src='${fallbackChain[fallbackChain.length-1]}';}">`;
+  return `<img src="${escapeHtml(video.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-video-thumb-id="${escapeHtml(video.id)}" onload="if(this.naturalWidth<=120&&this.naturalHeight<=90)advanceThumbnailFallback(this)" onerror="advanceThumbnailFallback(this)">`;
 }
 
 function isDailyFeedView() {
