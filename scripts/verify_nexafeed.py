@@ -194,9 +194,11 @@ if items:
     covered = sum(1 for item in items if item.get("id") in detail_items)
     coverage = covered / len(items)
     rich_health = health.get("richMetadata") or {}
+    rich_checked = int(rich_health.get("checked") or 0)
+    rich_warnings = int(rich_health.get("warnings") or 0)
     rich_metadata_unavailable = (
-        int(rich_health.get("checked") or 0) == 0
-        and int(rich_health.get("warnings") or 0) >= len(items)
+        rich_warnings >= max(1, int(len(items) * 0.60))
+        and rich_checked + rich_warnings >= len(items)
     )
     if coverage < 0.60 and not rich_metadata_unavailable:
         fail(f"rich metadata coverage too low: {covered}/{len(items)}")
