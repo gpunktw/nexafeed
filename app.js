@@ -1283,6 +1283,7 @@ function advanceThumbnailFallback(image) {
   image.dataset.fallbackIndex = String(index + 1);
   image.src = fallbacks[index];
 }
+globalThis.advanceThumbnailFallback = advanceThumbnailFallback;
 
 function thumbnailImage(video) {
   return `<img src="${escapeHtml(video.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-video-thumb-id="${escapeHtml(video.id)}" onload="if(this.naturalWidth<=120&&this.naturalHeight<=90)advanceThumbnailFallback(this)" onerror="advanceThumbnailFallback(this)">`;
