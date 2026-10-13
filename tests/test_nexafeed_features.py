@@ -66,7 +66,7 @@ class FrontendFeatureTests(unittest.TestCase):
             'data-view="ignored"',
             'id="ignoredCount"',
             "Ignored videos",
-            "app.js?v=20260821-gemini-brief",
+            "app.js?v=20261013-thumbnail-fallback",
             "style.css?v=20260821-gemini-brief",
         ]:
             self.assertIn(marker, index_html)
@@ -95,7 +95,7 @@ class FrontendFeatureTests(unittest.TestCase):
         ]:
             self.assertIn(marker, app_js)
 
-        self.assertIn("app.js?v=20260821-gemini-brief", index_html)
+        self.assertIn("app.js?v=20261013-thumbnail-fallback", index_html)
         self.assertIn("style.css?v=20260821-gemini-brief", index_html)
         self.assertIn("still present in the active feed is protected from pruning", readme)
 
@@ -572,7 +572,7 @@ class FrontendFeatureTests(unittest.TestCase):
 
         self.assertIn("gemini-button", style_css)
         self.assertIn("gemini-icon", style_css)
-        self.assertIn("app.js?v=20260821-gemini-brief", index_html)
+        self.assertIn("app.js?v=20261013-thumbnail-fallback", index_html)
         self.assertIn("style.css?v=20260821-gemini-brief", index_html)
 
     def test_wheel_scroll_over_youtube_iframe_is_captured(self):
@@ -753,7 +753,7 @@ class FrontendFeatureTests(unittest.TestCase):
         self.assertIn("YourTube - A personal YouTube Package", index_html)
         self.assertIn("Watch only those valuable for you", index_html)
         self.assertIn("style.css?v=20260821-gemini-brief", index_html)
-        self.assertIn("app.js?v=20260821-gemini-brief", index_html)
+        self.assertIn("app.js?v=20261013-thumbnail-fallback", index_html)
         self.assertIn('aria-label="YourTube home"', index_html)
         self.assertIn('data-view="liked"', index_html)
         self.assertIn('id="likedCount"', index_html)
