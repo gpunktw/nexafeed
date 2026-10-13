@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T11:05:14Z",
+  "updatedAt": "2026-10-13T11:30:38Z",
   "items": [
     {
       "id": "z_sXLlLVUls",
@@ -21063,6 +21063,15 @@
       "channelsChecked": 18,
       "warnings": 0,
       "secondaryQuery": "local LLM hardware GPU benchmark"
+    },
+    {
+      "runAt": "2026-10-13T11:30:38Z",
+      "new": 0,
+      "long": 0,
+      "shorts": 0,
+      "channelsChecked": 18,
+      "warnings": 0,
+      "secondaryQuery": "neue KI Modelle deutsch | local AI Qwen Ollama llama.cpp hardware | Kunst Malerei Tutorial deutsch | new Soulslike games"
     }
   ]
 }
